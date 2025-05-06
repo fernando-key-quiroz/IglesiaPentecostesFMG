@@ -1,0 +1,182 @@
+/*  Sermons Page Style*/
+
+/* Header & Banner */
+.header {
+  background: #ede2cb;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header__banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+/* Navigation Menu */
+.nav__menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000; /* nav above other elements */
+}
+
+.nav__menu li {
+  position: relative;
+}
+
+/* Sermons Page for Navigation Links */
+
+.nav__link,
+.nav__link:visited,
+.nav__link:focus,
+.nav__link:active {
+  font-size: 1.5rem;
+  font-family: "Aptos Bold Italic", sans-serif;
+  color: #373684;
+  text-decoration: none;
+  padding: 1.2rem 2rem;
+  margin: 0 2ch;
+  letter-spacing: 0.05rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav__link:hover {
+  background: #c0caf7;
+  color: #1f1f70;
+  text-decoration: none;
+}
+
+.nav__link.active {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Submenu Styles (from global) */
+.nav__submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #d4a373;
+  padding: 10px;
+  list-style: none;
+  min-width: 180px;
+  z-index: 1001;
+}
+
+.nav__menu li:hover .nav__submenu {
+  display: block;
+}
+
+.nav__submenu li {
+  padding: 8px 12px;
+}
+
+.nav__submenu li a,
+.nav__submenu li a:visited,
+.nav__submenu li a:focus,
+.nav__submenu li a:active {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.nav__submenu li a:hover {
+  background-color: #e76f51;
+}
+
+/* Responsive Header Adjustments */
+@media (max-width: 768px) {
+  .header__banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nav__menu {
+    flex-direction: column;
+  }
+  
+  .nav__link {
+    font-size: 1.35rem; /* Slightly smaller for mobile */
+    padding: 0.8rem 1rem;
+    margin: 0;
+  }
+}
+ 
+
+/* Sermons Grid Container */
+.sermons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Sermon Section */
+.sermon-section {
+  flex: 1 1 100%;
+  background-color: #ede2cc;#800000;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Video Container with 16:9 Aspect Ratio */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Correct 16:9 ratio */
+}
+
+.sermon-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Categories Subgrid for Sermons */
+.categories-grid {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.category-item {
+  flex: 1;
+  background-color: #ede2cc;#800000;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .sermons-grid {
+    flex-direction: column;
+  }
+  
+  .categories-grid {
+    flex-direction: column;
+  }
+  
+  .category-item {
+    flex: 1 1 100%;
+  }
+}
+
+/* Optional Video Grid (if used) */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}

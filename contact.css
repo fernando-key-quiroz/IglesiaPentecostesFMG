@@ -1,0 +1,89 @@
+/* =====================
+   CONTACT HEADER STYLING
+========================= */
+
+#contactHeader {
+  max-width: 1024px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+#contactHeader h1 {
+  color: #AD2831;
+  font-size: 2em;
+}
+
+/* =====================
+   CONTACT FORM SECTION
+========================= */
+
+#contactFormWrapper {
+  display: flex;
+  gap: 20px;
+  max-width: 1024px;
+  margin: 20px auto;
+  padding: 0 20px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.form-column {
+  flex: 1;
+  max-width: 600px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 1em;
+  color: #38040e;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+form button {
+  padding: 12px 20px;
+  background: #38040e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #5a0f1b;
+}
+
+/* =====================
+   FOOTER STYLING (Matching Index Page)
+========================= */
+
+footer {
+  background-color: #ede1cb;
+  padding: 20px;
+}
+
+footer nav {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+footer section {
+  text-align: center;
+  color: #38040e;
+}

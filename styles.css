@@ -1,0 +1,468 @@
+/* Church Website/assets/css/STYLES.CSS */
+/*CHURCH WEBSITE AUTHOR: Fernando Quiroz */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background: #ede1cb;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header__banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+/* Navigation menu is kept separate from the logo. */
+.nav__menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000; /* Ensure nav appears above other content */
+}
+
+.nav__menu li {
+  position: relative;
+}
+
+/* Navigation Link: 
+   - Updated to 75% of the original size (1.5rem instead of 2rem)
+   - "Aptos Bold Italic" (ensure it's available or imported)
+   - No underlines, and horizontal margin is now 2ch */
+.nav__link,
+.nav__link:visited,
+.nav__link:focus,
+.nav__link:active {
+  font-size: 1.5rem;
+  font-family: "Aptos Bold Italic", sans-serif;
+  color: #373684;
+  text-decoration: none;
+  padding: 1.2rem 2rem;
+  margin: 0 2ch;
+  letter-spacing: 0.05rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav__link:hover {
+  background: #c0caf7;
+  color: #1f1f70;
+  text-decoration: none;
+}
+
+.nav__link.active {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* =====================
+   SUBMENU STYLES
+========================= */
+.nav__submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #d4a373;
+  padding: 10px;
+  list-style: none;
+  min-width: 180px;
+  z-index: 1001;  /* Ensure submenu appears on top */
+}
+
+.nav__menu li:hover .nav__submenu {
+  display: block;
+}
+
+.nav__submenu li {
+  padding: 8px 12px;
+}
+
+.nav__submenu li a,
+.nav__submenu li a:visited,
+.nav__submenu li a:focus,
+.nav__submenu li a:active {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.nav__submenu li a:hover {
+  background-color: #e76f51;
+}
+
+/* =====================
+   MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 768px) {
+  .header__banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav__menu {
+    flex-direction: column;
+  }
+
+  .nav__link {
+    font-size: 1.35rem; /* Scaled down for mobile relative to desktop size */
+    padding: 1rem 1.5rem;
+    margin: 0; /* No horizontal margin on mobile */
+  }
+}
+
+/* =====================
+   IMAGE BANNER
+========================= */
+.image-banner {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;  /* Image is behind text */
+}
+
+.horizontal-stretch {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* =====================
+   ABOUT GRID & SECTIONS
+========================= */
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #ede2cc;
+  padding: 2%;
+}
+
+.about-section {
+  flex: 1 1 30%;
+  background-color: #efacc1;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h3 {
+  color: #373684;
+}
+
+@media screen and (max-width: 768px) {
+  .about-section {
+    flex: 1 1 100%;
+  }
+}
+
+.section-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* =====================
+   IGLESIA TITLE LOGO OVERLAY
+   ========================== */
+
+/* 
+   Ensures that the image banner behaves as a relative container 
+   so elements inside it can be positioned precisely.
+*/
+.image-banner {
+    position: relative; 
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;  /* Centers vertically */
+}
+
+/* 
+   Overlay the Iglesia Title Logo over mound.jpg.
+   Position it absolutely within .image-banner while keeping its centered alignment.
+*/
+.image-banner img.overlay-logo {
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 60%;  /* Adjust as needed */
+    height: auto;
+    z-index: 10;  /* Ensures that the logo appears above the background */
+}
+
+/* =====================
+   IGLESIA TITLE LOGO OVERLAY & UNDERLAY FIX
+   ========================== */
+
+/* Keep .image-banner as a relative container */
+.image-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;  /* Centers all images horizontally */
+    align-items: center;  /* Ensures vertical alignment */
+}
+
+/* Ensure mound.jpg stays stretched as a background */
+.image-banner img.horizontal-stretch {
+    width: 100%;
+    height: auto;
+}
+
+/* Underlay image positioned directly beneath the overlay */
+/*.image-banner img.underlay-logo {*/
+/*    position: absolute; */
+/*    top: 50%; */
+/*    left: 50%; */
+/*    transform: translate(-50%, -50%); */
+/*    width: auto; */
+/*    max-width: 60%; */
+/*    height: auto; */
+/*    z-index: 5; */ /* Below overlay image */
+/* } */
+
+/* Overlay image positioned directly over the underlay */
+.image-banner img.overlay-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 60%;
+    height: auto;
+    z-index: 10; /* Above the underlay image */
+}
+
+/* =====================
+   MAIN CHURCH SERVICES LAYOUT
+========================= */
+
+/* Container for the main content (left filters + right event listings) */
+#boxOfficeWrapper {
+   display: flex;
+   gap: 20px;
+   max-width: 1024px;
+   margin: 20px auto;
+   padding: 0 20px;
+}
+
+/* LEFT COLUMN: Filter Options */
+#filters {
+   flex: 1;
+   background: #f9f9f9;
+   padding: 15px;
+   border: 1px solid #ddd;
+}
+
+#filters h2,
+#filters h3 {
+   color: rgb(154, 64, 3);
+   margin-bottom: 10px;
+}
+
+/* Checkbox and form styling within filters */
+#filters form {
+   font-size: 0.95em;
+}
+#filters form label {
+   display: block;
+   margin-bottom: 5px;
+}
+
+/* RIGHT COLUMN: Detailed Event Listings */
+#eventListings {
+   flex: 2;
+}
+
+#eventListings h2 {
+   color: rgb(154, 64, 3);
+   margin-bottom: 15px;
+}
+
+.event-item {
+   border-bottom: 1px solid #ddd;
+   padding-bottom: 15px;
+   margin-bottom: 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+}
+
+.event-info {
+   max-width: 80%;
+}
+
+.event-info p {
+   margin: 5px 0;
+   font-size: 0.95em;
+}
+
+.event-info p strong {
+   color: rgb(154, 64, 3);
+}
+
+/* RSVP Button Styling */
+.rsvp {
+   background: rgb(178, 97, 63);
+   color: white;
+   border: none;
+   padding: 10px 15px;
+   cursor: pointer;
+   font-size: 0.9em;
+   transition: background 0.3s ease;
+}
+
+.rsvp:hover {
+   background: rgb(154, 64, 3);
+}
+
+/* =====================
+   GLOBAL TEXT COLOR UPDATE TO #640D14
+========================= */
+
+#filters h2, #filters h3,
+#eventListings h2,
+.event-info p strong,
+footer section,
+footer nav ul li a {
+    color: #640D14; /* Updated dark red-brown hue */
+}
+
+/* RSVP Button Color Update */
+.rsvp {
+    background: #640D14; /* Button background color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+}
+
+.rsvp:hover {
+    background: #5a0f1b; /* Slightly lighter shade for hover */
+}
+
+/* Footer Background Update */
+footer {
+    background-color: #640D14; /* Matching hue for continuity */
+    border-top: 2px solid #5a0f1b; /* Slightly lighter shade */
+}
+
+/* =====================
+   DROP-DOWN MENU COLOR UPDATE (#AD2831)
+========================= */
+
+/* Background color for the drop-down menu */
+.nav__submenu {
+    background-color: #AD2831;
+}
+
+/* Text color inside the drop-down menu */
+.nav__submenu li a,
+.nav__submenu li a:visited,
+.nav__submenu li a:focus,
+.nav__submenu li a:active {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+}
+
+/* Hover effect for drop-down menu links */
+.nav__submenu li a:hover {
+    background-color: #801E27; /* Slightly darker shade for hover */
+}
+
+/* =====================
+   CENTERING CHURCH.PNG IMAGE
+========================= */
+
+.picture {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers vertically (if needed) */
+    width: 100%;
+    margin: 20px auto;
+}
+
+.picture img.center {
+    max-width: 60%; /* Adjust as needed */
+    height: auto;
+    display: block;
+}
+
+/* =====================
+   FOOTER NAVIGATION UNIFORM LAYOUT & COLOR
+========================= */
+
+/* Footer Container: Ensure it stands out with uniform spacing and matching color scheme */
+footer {
+   clear: both;
+   display: block;
+   margin-top: 20px;
+   background-color: #ede1cb; /* Same banner background used in header */
+   padding: 20px 0;
+   border-top: 2px solid rgb(154, 64, 3); /* Use header nav color for continuity */
+}
+
+/* Footer Navigation: Arrange the three link groups evenly */
+footer nav {
+   display: flex;
+   justify-content: space-around;
+   max-width: 1024px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+/* Each list group in the footer nav */
+footer nav ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+/* Footer Links: Use the header's color for continuity */
+footer nav ul li a {
+   color: rgb(154, 64, 3);
+   text-decoration: none;
+   font-size: 0.95em;
+   transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+   text-decoration: underline;
+}
+
+/* Footer Address Section */
+footer section {
+   max-width: 1024px;
+   margin: 10px auto 0;
+   text-align: center;
+   color: rgb(154, 64, 3);
+   font-size: 0.95em;
+   line-height: 1.4;
+}

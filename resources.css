@@ -1,0 +1,65 @@
+/* Social Links Section */
+.social-links {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.social-links h3 {
+  font-size: 1.5rem;
+  color: #373684;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 40px; /* Shrink to icon size */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Article Multi-Column Layout (Bible Studies) */
+article {
+  -moz-column-width: 260px;
+  -webkit-column-width: 260px;
+  column-width: 260px;
+
+  -moz-column-gap: 20px;
+  -webkit-column-gap: 20px;
+  column-gap: 20px;
+
+  -moz-column-rule: 1px solid #9a4020;
+  -webkit-column-rule: 1px solid #9a4020;
+  column-rule: 1px solid #9a4020;
+
+  widows: 2;
+  orphans: 2;
+  padding: 1rem;
+}
+
+article h1 {
+  -moz-column-span: all;
+  -webkit-column-span: all;
+  column-span: all;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+article h2 {
+  font-size: 1.2rem;
+  color: #9a4020;
+  margin-top: 1rem;
+}
+
+article p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
