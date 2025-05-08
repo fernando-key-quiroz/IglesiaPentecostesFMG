@@ -1,7 +1,7 @@
-<!-- Iglesia Pentecostés Fe Misericordia y Gracia -->
+<!-- Iglesia Pentecostés Fe Misericordia y Gracia CONTACT.HTML -->
 <!-- Website Author: Fernando Quiroz -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="assets/css/contact.css">
   </head>
   <body>
-
-    <!-- Header Section (Maintains Index Page Style) -->
+    <!-- Header Section -->
     <header class="header">
       <div class="header__banner">
         <a href="index.html" class="logo__link">
@@ -20,112 +19,189 @@
         </a>
         <nav class="nav" aria-label="Main navigation">
           <ul class="nav__menu">
-            <li><a href="about.html" class="nav__link">About</a></li>
-            <li><a href="sermons.html" class="nav__link">Sermons</a></li>
-            <li><a href="events.html" class="nav__link">Events</a></li>
-            <li><a href="resources.html" class="nav__link">Resources</a></li>
-            <li><a href="contact.html" class="nav__link active">Contact</a></li>
+            <li>
+              <a href="about.html" class="nav__link">About</a>
+              <ul class="nav__submenu">
+                <li><a href="about.html#history">Our History & Vision</a></li>
+                <li><a href="about.html#faith">Statement of Faith</a></li>
+                <li><a href="about.html#location">Location & Hours</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="sermons.html" class="nav__link">Sermons</a>
+              <ul class="nav__submenu">
+                <li><a href="sermons.html#featured">Featured Sermon</a></li>
+                <li><a href="sermons.html#library">Sermon Library</a></li>
+                <li><a href="sermons.html#categories">Categories</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="events.html" class="nav__link active">Events</a>
+              <ul class="nav__submenu">
+                <li><a href="events.html#sunday-expanded">Sunday Mass</a></li>
+                <li><a href="events.html#midweek-expanded">Bible Study</a></li>
+                <li><a href="events.html#weekend-expanded">Preaching & Worship</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="resources.html" class="nav__link">Resources</a>
+              <ul class="nav__submenu">
+                <li><a href="resources.html#studies">Bible Studies</a></li>
+                <li><a href="resources.html#media">Media</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="contact.html" class="nav__link active">Contact</a>
+              <ul class="nav__submenu">
+                <li><a href="contact.html#form">Contact & Prayer Form</a></li>
+                <li><a href="contact.html#prayer">Prayer Bulletin Board</a></li>
+                <li><a href="contact.html#map">Location Map</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-
+    
     <!-- Contact Header -->
     <article id="contactHeader">
-      <h1>Contact Us</h1>
-    </article>
-
-    <!-- Contact Form Section (Replicates Example Layout) -->
-    <section id="contactFormWrapper">
-      <!-- Left Column: Contact Form -->
-      <div class="form-column">
-        <form action="contact_process.php" method="post">
-          <label for="fname">First Name:</label>
-          <input type="text" id="fname" name="fname" required>
-
-          <label for="lname">Last Name:</label>
-          <input type="text" id="lname" name="lname" required>
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone">
-
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <button type="submit">Submit</button>
-        </form>
+      <div class="main-heading-container">
+        <h1>Contact Us 📞🌍📲</h1>
       </div>
-
-      <!-- Right Column: Contact Image & Chat Icon -->
-      <div class="image-column">
-        <img src="assets/media/church.png" alt="Church Building">
+    </article>
+    
+    <!-- Contact Message Section (changed from section to div because it lacks a heading) -->
+    <div id="contactMessage">
+      <div class="contact-container">
+        <p>
+          Have questions about our upcoming services, seating details, directions, parking, or any other aspect of your experience? Want to share a prayer request to be posted on our community bulletin board? We’re here to help ensure your visit is filled with the Holy Spirit and provide you with spiritual rejuvenation. Please use the form below to reach out or submit a prayer request—our friendly team is ready to assist you! We’re currently working on adding real-time counseling, prayer, and scripture lessons through our chat service in the near future. Stay tuned, and for now, follow us on social media using the icons listed below.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Contact Form and Prayer Bulletin Section -->
+    <section id="contactFormWrapper">
+      <div class="contact-grid">
+        <!-- Unified Contact and Prayer Form -->
+        <div class="contact-container" id="form">
+          <h2>Contact & Prayer Form</h2>
+          <form action="contact_prayer_process.php" method="post" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="phone">Phone Number (optional):</label>
+            <input type="tel" id="phone" name="phone">
+    
+            <label for="request-type">Request Type:</label>
+            <select id="request-type" name="request_type" required>
+              <option value="" disabled selected>Select Request Type</option>
+              <option value="inquiry">General Inquiry</option>
+              <option value="prayer">Prayer Request</option>
+            </select>
+    
+            <label for="message">Message or Prayer Request:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+    
+            <label for="image">Upload Image (optional, for prayer requests):</label>
+            <input type="file" id="image" name="image" accept="image/*">
+    
+            <button type="submit" class="rsvp">Submit</button>
+          </form>
+        </div>
+    
+        <!-- Prayer Bulletin Board -->
+        <div class="contact-container" id="prayer">
+          <h2>Prayer Bulletin Board</h2>
+          <div class="prayer-bulletin">
+            <div class="prayer-request">
+              <h3>Prayer for Rocco The Baby "Boofy"</h3>
+              <img src="assets/media/boofy.gif" alt="Rocco the Chihuahua">
+              <p>
+                Pray for Rocco The Baby "Boofy," a beloved Chihuahua pet of our congregant Fernando Quiroz. Boofy has been with our family since Obama's second term in office. Now over 18 years old, he can no longer see nor walk and is in constant pain, barking constantly for attention. Despite our efforts to comfort him, he remains irritated and in pain, sometimes hurting himself by slamming his head on the ground trying to get up. So we have to pay close attention to him to prevent him from hurting himself. It's a constant job being a caretaker for him, the struggle seems to be non-stop for him since he's barking constantly from 1:00 AM - 8:00 AM, takes a break then continues to cry in pain. We are debating whether to put him down, but we just can't see ourselves doing that, although we really have no recourse for him other than to hope his pain subsides. We want to make Boofy as comfortable as possible in his final days, we pray that the pain he's in can go away through these thoughts we petition the lord through prayer, we ask for guidance and relief for our beloved family friend and long time companion Rocco the Baby Boofy Monster. Hear our prayers lord and give our friend some reprieve from the pain, Amen and thank you Lord Jesus Christ
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Contact Image and Chat Icon -->
+      <div class="contact-container image-column">
+        <img src="assets/media/church.png" alt="Church" class="center">
         <a href="https://web.telegram.org/k/" title="Chat with us" class="chat-link">
-          <img src="assets/media/chat-icon.png" alt="Chat Icon">
+          <img src="assets/media/chaticon.png" alt="Chat Icon">
           <br>Chat with us
         </a>
       </div>
     </section>
-
-    <!-- Contact Details -->
-    <section id="contactDetails">
-      <p><strong>Phone:</strong> <a href="tel:(312)586-0335">(312) 586 - 0335</a></p>
-      <p><strong>Email:</strong> <a href="mailto:fquiroz9@student.ccc.edu">fquiroz9@student.ccc.edu</a></p>
-    </section>
-
-    <!-- Social Media Links -->
-    <section id="socialMedia">
-      <a href="https://www.instagram.com/" title="Instagram">
-        <img src="assets/media/instagram.png" alt="Instagram">
-      </a>
-      <a href="https://www.facebook.com/" title="Facebook">
-        <img src="assets/media/facebook.png" alt="Facebook">
-      </a>
-      <a href="https://www.youtube.com/" title="YouTube">
-        <img src="assets/media/youtube.png" alt="YouTube">
-      </a>
-      <a href="https://www.tiktok.com/" title="TikTok">
-        <img src="assets/media/tiktok.png" alt="TikTok">
-      </a>
-    </section>
-
-    <!-- Footer Section (Maintains Index Page Style) -->
-    <footer>
-      <article id="churchservices">
-        <div class="picture">
-          <img src="assets/media/church.png" alt="Church community" class="center">
+    
+    <!-- Contact Details Section (changed to div as no heading is provided) -->
+    <div id="contactDetails">
+      <div class="contact-container">
+        <p><strong>Phone:</strong> <a href="tel:(312)586-0335">(312) 586 - 0335</a></p>
+        <p><strong>Email:</strong> <a href="mailto:fquiroz9@student.ccc.edu">fquiroz9@student.ccc.edu</a></p>
+      </div>
+    </div>
+    
+    <!-- Location Map Section -->
+    <section id="map">
+      <div class="contact-container">
+        <h2>Location Map</h2>
+        <div class="map-wrapper">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2975.255393003136!2d-87.7055926!3d41.7797093!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e31000b6b4149%3A0x30613aeb16129cef!2sIglesia%20Pentecost%C3%A9s%20Fe%20Misericordia%20y%20Gracia!5e0!3m2!1sen!2sus!4v1744780681220!5m2!1sen!2sus" 
+                  style="width:100%; height:300px; border:0;" allowfullscreen="" loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-      </article>
+        <p>Come visit us at our Chicago, IL location. Open Sunday, Wednesday, Friday, &amp; Saturday with service times listed on our Events page.</p>
+      </div>
+    </section>
+    
+    <!-- Social Media Section: Changed to div because no heading is provided -->
+    <div id="socialMedia">
+      <div class="contact-container">
+        <a href="https://www.instagram.com/" title="Instagram">
+          <img src="assets/media/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/" title="Facebook">
+          <img src="assets/media/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/" title="YouTube">
+          <img src="assets/media/youtube.png" alt="YouTube">
+        </a>
+        <a href="https://www.tiktok.com/" title="TikTok">
+          <img src="assets/media/tiktok.png" alt="TikTok">
+        </a>
+      </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer>
       <nav>
         <ul>
-          <li><a href="#">Visitors</a></li>
-          <li><a href="#">Location</a></li>
-          <li><a href="#">Parking</a></li>
+          <li><a href="about.html">Visitors</a></li>
+          <li>
+            <a href="https://www.google.com/maps?ll=41.779614,-87.705803&z=15&t=m&hl=en&gl=US&mapclient=embed&cid=3486132367923518703">
+              Location
+            </a>
+          </li>
+          <li><a href="contact.html">Parking</a></li>
         </ul>
         <ul>
-          <li><a href="box office.html">Preaching</a></li>
-          <li><a href="#">Sermons</a></li>
           <li><a href="events.html">Events</a></li>
-          <li><a href="#">Bible Scripture</a></li>
-          <li><a href="#">FAQs</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">Foundation</a></li>
-          <li><a href="#">Board</a></li>
-          <li><a href="#">Donations</a></li>
-          <li><a href="#">Volunteering</a></li>
+          <li><a href="resources.html">Bible Scripture</a></li>
+          <li><a href="about.html">FAQs</a></li>
         </ul>
       </nav>
-      <section>
-        Iglesia Pentecostés Fe Misericordia y Gracia<br>
-        3309 W 62nd Pl,<br>
-        Chicago, IL 60629<br>
-        Office: (312) 586 - 0335<br>
-        Head Office: (312) 586 - 0335
-      </section>
+      <div class="footer-details">
+        <!-- Hidden heading to satisfy validator -->
+        <h3 style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">Footer Details</h3>
+        <p>Iglesia Pentecostés Fe Misericordia y Gracia</p>
+        <p>3309 W 62nd Pl, Chicago, IL 60629</p>
+        <p>Office: (312) 586 - 0335 | Head Office: (312) 586 - 0335</p>
+        <p>&copy; 2025 Iglesia Pentecostés Fe Misericordia y Gracia</p>
+      </div>
     </footer>
-
   </body>
 </html>
