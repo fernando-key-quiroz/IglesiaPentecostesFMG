@@ -1,19 +1,53 @@
+<!-- Iglesia Pentecostés Fe Misericordia y Gracia: RESOURCES.HTML -->
+<!-- Website Author: Fernando Quiroz -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - Iglesia Pentecostés FMG</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/resources.css">
+    <!-- Consolidated inline styles from your head -->
+    <style>
+      /* Media Container Styling */
+      .media-container {
+        margin-top: 2rem;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      /* Responsive video container */
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        margin: 1rem 0;
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
   </head>
   <body>
+    <!-- Header Section -->
     <header class="header">
       <div class="header__banner">
         <a href="index.html" class="logo__link">
           <img src="assets/media/church-logo.jpg" alt="Home - Iglesia Pentecostés FMG" class="header__logo" width="150">
         </a>
-        <!-- Navigation Menu -->
         <nav class="nav" aria-label="Main navigation">
           <ul class="nav__menu">
             <li>
@@ -29,13 +63,15 @@
               <ul class="nav__submenu">
                 <li><a href="sermons.html#featured">Featured Sermon</a></li>
                 <li><a href="sermons.html#library">Sermon Library</a></li>
+                <li><a href="sermons.html#categories">Categories</a></li>
               </ul>
             </li>
             <li>
-              <a href="events.html" class="nav__link">Events</a>
+              <a href="events.html" class="nav__link active">Events</a>
               <ul class="nav__submenu">
-                <li><a href="events.html#upcoming">Upcoming Events</a></li>
-                <li><a href="events.html#past">Past Events</a></li>
+                <li><a href="events.html#sunday-expanded">Sunday Mass</a></li>
+                <li><a href="events.html#midweek-expanded">Bible Study</a></li>
+                <li><a href="events.html#weekend-expanded">Preaching & Worship</a></li>
               </ul>
             </li>
             <li>
@@ -46,9 +82,10 @@
               </ul>
             </li>
             <li>
-              <a href="contact.html" class="nav__link">Contact</a>
+              <a href="contact.html" class="nav__link active">Contact</a>
               <ul class="nav__submenu">
-                <li><a href="contact.html#info">Contact Info</a></li>
+                <li><a href="contact.html#form">Contact & Prayer Form</a></li>
+                <li><a href="contact.html#prayer">Prayer Bulletin Board</a></li>
                 <li><a href="contact.html#map">Location Map</a></li>
               </ul>
             </li>
@@ -58,41 +95,119 @@
     </header>
 
     <main>
-      <!-- Bible Studies Section -->
-      <article id="studies">
-        <h1>Bible Studies: The Golden Rule Scriptures</h1>
-        <section>
-          <h2>Matthew 7:12</h2>
+      <!-- Bible Studies Header Section -->
+      <section id="studies">
+        <div id="studiesHeader">
+          <div class="studies-container">
+            <h1>Bible Studies 📯</h1>
+          </div>
+        </div>
+        <!-- (Any additional Bible Studies content can follow here) -->
+      </section>
+
+      <!-- Image Containers for Scripture Commentary -->
+      <div class="image-containers">
+        <div class="image-container" data-target="matthew-commentary">
+          <img src="assets/media/book.png" alt="Illustration for Matthew 7:12">
+          <h3>Matthew 7:12</h3>
           <p>
-            "So in everything, do to others what you would have them do to you, for this sums up the Law and the Prophets."
+            "So in everything, do to others what you would have them do to you, for this sums up the Law and the Prophets."  
           </p>
-        </section>
-        <section>
-          <h2>Luke 6:31</h2>
+        </div>
+        <div class="image-container" data-target="luke-commentary">
+          <img src="assets/media/teach.png" alt="Illustration for Luke 6:31">
+          <h3>Luke 6:31</h3>
           <p>
-            "Do to others as you would have them do to you."
+            "Do to others as you would have them do to you."  
           </p>
-        </section>
-        
-		<section>
-          <h2>Galatians 5:14</h2>
-          
-            "For the entire law is fulfilled in keeping this one command: 'Love your neighbor as yourself.'"
-          </p>
-        </section>
-        
-		<section>
-          <h2>James 2:8</h2>
+        </div>
+        <div class="image-container" data-target="galatians-commentary">
+          <img src="assets/media/sermon.png" alt="Illustration for Galatians 5:14">
+          <h3>Galatians 5:14</h3>
           <p>
-            "If you really keep the royal law found in Scripture, 'Love your neighbor as yourself,' you are doing right."
+            "For the entire law is fulfilled in keeping this one command: 'Love your neighbor as yourself.'"  
           </p>
-        </section>
-      </article>
+        </div>
+        <div class="image-container" data-target="james-commentary">
+          <img src="assets/media/exodus.png" alt="Illustration for James 2:8">
+          <h3>James 2:8</h3>
+          <p>
+            "If you really keep the royal law found in Scripture, 'Love your neighbor as yourself,' you are doing right."  
+          </p>
+        </div>
+      </div>
+
+      <!-- Scripture Commentary Detailed Texts -->
+      <div id="matthew-commentary" class="commentary-section">
+        <h2>Matthew 7:12</h2>
+        <p>
+          "So in everything, do to others what you would have them do to you, for this sums up the Law and the Prophets."  
+          This timeless wisdom sits at the heart of every moral code worth its name. In the ancient Israelite tradition, the prophet Micah added, “What does the LORD require of you? To act justly and to love mercy and to walk humbly with your God” (Micah 6:8), showing that kindness and fairness are inseparable from true worship. When Emperor Aśoka of India embraced non-violence after the Kalinga war, he carved out edicts urging subjects to treat one another with compassion—transforming an empire once built on conquest into one remembered for its benevolence. By doing to others what we wish done to us, we cultivate societies where the vulnerable are protected, the stranger is welcomed, and mercy becomes the currency of daily life.
+        </p>
+      </div>
+      <div id="luke-commentary" class="commentary-section">
+        <h2>Luke 6:31</h2>
+        <p>
+          "Do to others as you would have them do to you."  
+          In these few words, Jesus echoes the ancient voice of Hillel the Elder, who said centuries earlier, “What is hateful to you, do not do to your neighbor. That is the whole Torah; the rest is commentary.” By placing ourselves in another’s shoes, we learn restraint—choosing patience over retaliation, generosity over greed, and forgiveness over hate. The parable of the Good Samaritan (Luke 10:30–37) illustrates this perfectly: a man shunned by society becomes the model of neighborly love, showing that true empathy transcends boundaries of race, class, and creed. When this rule governs our actions, we become living bridges of understanding in a fragmented world.
+        </p>
+      </div>
+      <div id="galatians-commentary" class="commentary-section">
+        <h2>Galatians 5:14</h2>
+        <p>
+          "For the entire law is fulfilled in keeping this one command: 'Love your neighbor as yourself.'"  
+          This call to love echoes Leviticus 19:18—“Do not seek revenge or bear a grudge against anyone among your people, but love your neighbor as yourself”—and threads through both Jewish and Christian ethics as the foundation of communal harmony. In the early church, believers sold property to feed widows and orphans, modeling how self-sacrifice and mutual care can reshape society. During the abolitionist era, leaders like Frederick Douglass invoked this command to demand freedom for all, arguing that a nation’s true greatness lies in how it treats its weakest members. By living out this command today—sharing resources, offering kindness to strangers, defending the oppressed—we participate in a legacy of love that has healed wounds and overturned injustice across generations.
+        </p>
+      </div>
+      <div id="james-commentary" class="commentary-section">
+        <h2>James 2:8</h2>
+        <p>
+          "If you really keep the royal law found in Scripture, 'Love your neighbor as yourself,' you are doing right."  
+          James’s words remind us that love is not an abstract ideal but a royal decree that crowns our daily choices with dignity and purpose. In Proverbs 19:17 we read, “Whoever is kind to the poor lends to the LORD, and he will reward them for what they have done,” underscoring the spiritual and social dividends of compassion. In monastic communities from the Desert Fathers to Tibetan sages, disciples practiced hospitality as a form of meditation—welcoming every guest as Christ himself and discovering inner peace in selfless service. When we honor this royal law, we find that caring for others enriches our own hearts, heals fractured relationships, and makes every act of kindness a sacred offering in the grand tapestry of human flourishing.
+        </p>
+      </div>
 
       <!-- Media Section -->
       <section id="media">
-        <h1>Media</h1>
-        <p>Explore media content related to Bible studies and church activities.</p>
+        <div class="media-container">
+          <h1>Media</h1>
+          <p>Explore media content and dive deeper into the scriptures with our curated links.</p>
+          <div class="media-links">
+            <ul>
+              <li>
+                <strong>Matthew 7:12</strong> – 
+                <a href="https://www.biblegateway.com/passage/?search=Matthew%207:12&version=NIV" target="_blank" rel="noopener noreferrer">
+                  Read the passage & commentary on BibleGateway
+                </a>
+              </li>
+              <li>
+                <strong>Luke 6:31</strong> – 
+                <a href="https://www.biblegateway.com/passage/?search=Luke%206:31&version=NIV" target="_blank" rel="noopener noreferrer">
+                  Read the passage & commentary on BibleGateway
+                </a>
+              </li>
+              <li>
+                <strong>Galatians 5:14</strong> – 
+                <a href="https://www.biblegateway.com/passage/?search=Galatians%205:14&version=NIV" target="_blank" rel="noopener noreferrer">
+                  Read the passage & commentary on BibleGateway
+                </a>
+              </li>
+              <li>
+                <strong>James 2:8</strong> – 
+                <a href="https://www.biblegateway.com/passage/?search=James%202:8&version=NIV" target="_blank" rel="noopener noreferrer">
+                  Read the passage & commentary on BibleGateway
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="media-embeds">
+            <h2>Video Series</h2>
+            <p>Watch this deep-dive on the Golden Rule and related scriptures.</p>
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/4huswXWZ6-w" style="width:100%; height:315px; border:0;" title="YouTube video player" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Social Links Section -->
@@ -115,8 +230,46 @@
       </section>
     </main>
 
+    <!-- Footer Section -->
     <footer>
-      <p>&copy; 2025 Iglesia Pentecostés FMG. All rights reserved.</p>
+      <nav>
+        <ul>
+          <li><a href="about.html">Visitors</a></li>
+          <li>
+            <a href="https://www.google.com/maps?ll=41.779614,-87.705803&z=15&t=m&hl=en&gl=US&mapclient=embed&cid=3486132367923518703">
+              Location
+            </a>
+          </li>
+          <li><a href="contact.html">Parking</a></li>
+        </ul>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="resources.html">Bible Scripture</a></li>
+          <li><a href="about.html">FAQs</a></li>
+        </ul>
+      </nav>
+      <section class="footer-details">
+        <!-- Hidden heading to satisfy validator -->
+        <h3 style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">Footer Details</h3>
+        <p>Iglesia Pentecostés Fe Misericordia y Gracia</p>
+        <p>3309 W 62nd Pl, Chicago, IL 60629</p>
+        <p>Office: (312) 586 - 0335 | Head Office: (312) 586 - 0335</p>
+        <p>&copy; 2025 Iglesia Pentecostés Fe Misericordia y Gracia</p>
+      </section>
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.image-container').forEach(container => {
+          container.addEventListener('click', () => {
+            const targetId = container.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
