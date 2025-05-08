@@ -1,0 +1,144 @@
+/* Church Website/assets/css/events.css */
+/* CHURCH WEBSITE AUTHOR: Fernando Quiroz */
+
+/* Events Overview Section */
+#eventsOverview {
+  padding: 16px;
+  overflow: hidden;
+}
+
+/* --- Shrink Service Boxes for Top Row (as before) --- */
+/* Error: CSS2.1 Validator flags `box-sizing` as unsupported.
+   NOTE: Removing `box-sizing` will break our width/padding calculations
+   and ruin the layout, so leaving it in place. */
+/* Event Container Styling */
+.event-container {
+  float: left;
+  width: 30%;          
+  margin: 1%;          
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  padding: 12px;       
+  box-sizing: border-box;   /* keeping for proper sizing */
+  cursor: pointer;
+}
+
+.event-container img {
+  width: 100%;
+  height: 120px;       
+  margin-bottom: 12px; 
+}
+
+.event-text h2 {
+  color: #373684;
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.event-text p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+
+/* Expanded Events Section */
+/* Error: CSS2.1 Validator flags `max-width` as unsupported.
+   NOTE: If we replace it with `width`, we lose responsive shrink-down.
+   leaving `max-width` to preserve design. */
+#eventsExpanded {
+  max-width: 1200px;   /* keep for responsive layout */
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+}
+
+/* --- Expanded Top Row Boxes --- */
+#eventsExpanded #sunday-expanded,
+#eventsExpanded #midweek-expanded,
+#eventsExpanded #weekend-expanded {
+  display: inline-block;
+  width: 30%;          
+  margin: 1%;          
+  padding: 12px;       
+  box-sizing: border-box;   /* keep for proper sizing */
+}
+
+/* Bottom row: two side-by-side */
+#eventsExpanded #additional-expanded {
+  display: inline-block;
+  width: 48%;
+  margin: 1% 1% 16px;
+}
+
+/* Error: CSS2.1 Validator flags `:nth-child` as unsupported.
+   NOTE: This rule only targets a potential fifth container; removing it has minimal impact,
+   so it’s been commented out. */
+/*
+#eventsExpanded .expanded-container:nth-child(5) {
+  display: inline-block;
+  width: 48%;
+  margin: 1% 1% 16px;
+}
+*/
+
+.expanded-container {
+  display: inline-block;
+  width: 31%;
+  margin: 1.16%;
+  vertical-align: top;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  padding: 16px;
+  box-sizing: border-box;   /* keep for proper sizing */
+}
+
+.expanded-container h2 {
+  color: #373684;
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.expanded-container p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+
+.expanded-container img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 200px;
+  margin-bottom: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Error: CSS2.1 Validator flags media queries as unsupported.
+   NOTE: Removing this block will break responsiveness on mobile.
+   keeping it to preserve the design. */
+@media screen and (max-width: 768px) {
+  #eventsOverview .event-container,
+  #eventsExpanded .expanded-container,
+  #eventsExpanded #sunday-expanded,
+  #eventsExpanded #midweek-expanded,
+  #eventsExpanded #weekend-expanded,
+  #eventsExpanded #additional-expanded {
+    display: block;
+    width: 100%;
+    margin: 0 0 16px 0;
+  }
+}
+
+/* Styling for the Services title in the Studies section */
+#studies h1 {
+  text-align: center;
+  color: #373684;
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+/* Ensure the parent section centers its text */
+#studies {
+  text-align: center;
+}
