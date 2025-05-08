@@ -1,65 +1,163 @@
+/* resources.css (CSS2.1 with annotations to preserve CSS3 layout) */
+
+/* Image Containers */
+/* Error (line 6): 'display:grid' unsupported in CSS2.1. Keeping two-column layout. */
+.image-containers {
+  display: grid;
+  /* Error (line 7): 'grid-template-columns' unsupported. Fixed two columns. */
+  grid-template-columns: repeat(2, 400px);
+  /* Error (line 8): 'gap' unsupported. Preserving spacing. */
+  gap: 16px;
+  /* Error (line 9): 'justify-content' unsupported. Centering grid. */
+  justify-content: center;
+  margin-bottom: 32px; /* replaced 2rem with 32px */
+}
+
+.image-container {
+  border: 1px solid #ccc;
+  /* Error (line 16): 'border-radius' unsupported. Keeping rounded corners. */
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  /* Error (line 20): 'transition' unsupported. Keeping hover effect. */
+  transition: transform 0.3s ease;
+  text-align: center;
+  /* Error (line 23): 'box-sizing' unsupported. Preserving box model. */
+  box-sizing: border-box;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.image-container h3 {
+  font-size: 14px;       /* replaced 0.9rem (~14px) */
+  margin: 8px 0;         /* replaced 0.5rem (~8px) */
+  color: #373684;
+}
+
+.image-container p {
+  font-size: 13px;       /* replaced 0.8rem (~13px) */
+  padding: 0 8px 8px;    /* replaced rem with px */
+}
+
+/* Commentary Sections */
+.commentary-section {
+  margin-top: 32px;      /* replaced 2rem */
+  padding: 16px;         /* replaced 1rem */
+  border: 1px solid #ddd;
+  /* Error (line 48): 'border-radius' unsupported. Preserving style. */
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.commentary-section h2 {
+  font-size: 19px;       /* replaced 1.2rem */
+  color: #9a4020;
+  margin-bottom: 8px;    /* replaced 0.5rem */
+}
+
+.commentary-section p {
+  font-size: 16px;       /* replaced 1rem */
+  line-height: 1.5;
+}
+
 /* Social Links Section */
 .social-links {
   text-align: center;
-  margin: 2rem auto;
+  margin: 32px auto;     /* replaced 2rem */
 }
 
 .social-links h3 {
-  font-size: 1.5rem;
+  font-size: 24px;       /* replaced 1.5rem */
   color: #373684;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;   /* replaced 1rem */
 }
 
+/* Error (line 79): 'display:flex' unsupported. Keeping for icon alignment. */
 .social-icons {
   display: flex;
+  /* Error (line 80): 'justify-content' unsupported. Centering icons. */
   justify-content: center;
-  gap: 1rem;
+  /* Error (line 81): 'gap' unsupported. Preserving spacing. */
+  gap: 16px;
 }
 
 .social-icon {
-  width: 40px; /* Shrink to icon size */
+  width: 40px;
   height: 40px;
+  /* Error (line 87): 'transition' unsupported. Keeping hover zoom. */
   transition: transform 0.3s ease;
 }
 
+/* Error (line 91): 'transform:scale' unsupported. Keeping hover zoom. */
 .social-icon:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
-/* Article Multi-Column Layout (Bible Studies) */
-article {
-  -moz-column-width: 260px;
-  -webkit-column-width: 260px;
-  column-width: 260px;
-
-  -moz-column-gap: 20px;
-  -webkit-column-gap: 20px;
-  column-gap: 20px;
-
-  -moz-column-rule: 1px solid #9a4020;
-  -webkit-column-rule: 1px solid #9a4020;
-  column-rule: 1px solid #9a4020;
-
-  widows: 2;
-  orphans: 2;
-  padding: 1rem;
+/* Ensure html and body fill the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-article h1 {
-  -moz-column-span: all;
-  -webkit-column-span: all;
-  column-span: all;
+/* Wrapper container for the whole page */
+/* Error (line 103): 'display:flex' unsupported. Preserving vertical flow. */
+body {
+  display: flex;
+  /* Error (line 104): 'flex-direction' unsupported. Preserving column flow. */
+  flex-direction: column;
+}
+
+/* Main content should expand to fill available space */
+/* Error (line 109): 'flex:1' unsupported. Preserving stretch. */
+main {
+  flex: 1;
+}
+
+/* Footer styling */
+footer {
+  background-color: #ede1cb;
+  padding: 20px 0;
+}
+
+/* Bible Studies Title Styling */
+#studies h1 {
   text-align: center;
-  margin-bottom: 1rem;
+  color: #373684;
+  font-size: 2.5em;
+  margin-bottom: 16px;    /* replaced 1rem */
 }
 
-article h2 {
-  font-size: 1.2rem;
-  color: #9a4020;
-  margin-top: 1rem;
+/* Scripture and Commentary Headings Color Override */
+.image-container h3,
+.commentary-section h2,
+.media-container h1,
+.media-container h2 {
+  color: #373684;
 }
 
-article p {
-  font-size: 1rem;
-  line-height: 1.5;
+/* Studies Container Box */
+#studiesHeader {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.studies-container {
+  display: inline-block;
+  border: 1px solid #ddd;
+  /* Error (line 153): 'border-radius' unsupported. Keeping rounded corners. */
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 16px 32px;
+}
+
+.studies-container h1 {
+  color: #373684;
+  font-size: 2em;
+  margin: 0;
 }
