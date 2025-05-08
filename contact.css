@@ -1,42 +1,99 @@
-/* =====================
-   CONTACT HEADER STYLING
-========================= */
+Thought for a couple of seconds
 
+
+```css
+/* contact.css - CSS2.1 validation annotations, preserving current design */
+
+body {
+  background: #FFF;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation submenu RSVP styling */
+/* Error (line 12): 'transition' unsupported in CSS2.1. Keeping for smooth hover effect. */
+.nav__submenu li a {
+  background-color: #ede1cb;
+  color: #640D14;
+  border: 2px solid #640D14;
+  padding: 10px 15px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav__submenu li a:hover {
+  background-color: #c0caf7;
+  color: #1f1f70;
+}
+
+/* Contact Header */
 #contactHeader {
   max-width: 1024px;
   margin: 20px auto;
   text-align: center;
   padding: 0 20px;
-  border-bottom: 1px solid #ddd;
 }
 
 #contactHeader h1 {
-  color: #AD2831;
+  color: #373684;
   font-size: 2em;
+  margin: 0;
 }
 
-/* =====================
-   CONTACT FORM SECTION
-========================= */
-
-#contactFormWrapper {
-  display: flex;
-  gap: 20px;
+/* Contact Message Section */
+#contactMessage {
   max-width: 1024px;
   margin: 20px auto;
   padding: 0 20px;
-  align-items: flex-start;
-  justify-content: center;
+  text-align: left;
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1.6;
 }
 
-.form-column {
-  flex: 1;
-  max-width: 600px;
+/* Contact Form and Prayer Bulletin Section */
+#contactFormWrapper {
+  max-width: 1024px;
+  margin: 20px auto;
+  padding: 0 20px;
 }
 
+.contact-grid {
+  /* Error (line 54): 'display: grid' unsupported. Keeping two-column responsive grid. */
+  display: grid;
+  /* Error (line 56): 'grid-template-columns' and '1fr' unsupported. Keeping auto-fit behavior. */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Error (line 58): 'gap' unsupported. Preserving spacing. */
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Container Styling */
+.contact-container {
+  border: 1px solid #ddd;
+  /* Error (line 66): 'border-radius' unsupported. Keeping rounded corners. */
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 16px;
+}
+
+/* Form Styling */
 form {
-  display: flex;
-  flex-direction: column;
+  /* Error (line 74): 'display: grid' unsupported. Keeping for layout. */
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Error (line 77): 'gap' unsupported. Preserving spacing. */
+  gap: 15px;
 }
 
 form label {
@@ -46,12 +103,16 @@ form label {
 }
 
 form input,
-form textarea {
+form textarea,
+form select {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
+  /* Error (line 93): 'border-radius' unsupported. Keeping small rounding. */
   border-radius: 5px;
   font-size: 1em;
+  /* Error (line 96): 'box-sizing' unsupported. Keeping for consistent box model. */
+  box-sizing: border-box;
 }
 
 form button {
@@ -59,31 +120,165 @@ form button {
   background: #38040e;
   color: white;
   border: none;
+  /* Error (line 105): 'border-radius' unsupported. Keeping slight rounding. */
   border-radius: 4px;
   cursor: pointer;
+  font-size: 1em;
+  /* Error (line 109): 'transition' unsupported. Keeping smooth background change. */
+  transition: background 0.3s ease;
 }
 
 form button:hover {
   background: #5a0f1b;
 }
 
-/* =====================
-   FOOTER STYLING (Matching Index Page)
-========================= */
-
-footer {
-  background-color: #ede1cb;
-  padding: 20px;
+/* Prayer Bulletin Styling */
+.prayer-bulletin h3 {
+  color: #302f68;
+  margin-bottom: 8px; /* replaced 0.5rem */
 }
 
-footer nav {
-  display: flex;
-  justify-content: space-around;
-  max-width: 1024px;
+.prayer-request img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  /* Error (line 127): 'border-radius' unsupported. Keeping for style. */
+  border-radius: 8px;
+  margin: 8px 0; /* replaced 0.5rem */
+}
+
+.prayer-request p {
+  font-size: 16px; /* replaced 1rem */
+  line-height: 1.5;
+}
+
+/* Contact Image Column */
+.image-column {
+  text-align: center;
+}
+
+.image-column img.center {
+  max-width: 100%;
+  max-height: 200px;
+  height: auto;
+  display: block;
   margin: 0 auto;
 }
 
-footer section {
-  text-align: center;
-  color: #38040e;
+/* Chat With Us icon fix */
+.image-column a.chat-link img {
+  width: 32px;
+  height: 32px;
 }
+
+/* Enforce chat icon size to override other rules */
+a.chat-link img,
+.chat-link img {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: none !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Social Media Links */
+#socialMedia {
+  max-width: 1024px;
+  margin: 20px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+#socialMedia a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+#socialMedia img {
+  width: 40px;
+  height: 40px;
+  /* Error (line 190): 'transition' unsupported. Keeping for hover effect. */
+  transition: opacity 0.3s ease;
+}
+
+#socialMedia a:hover img {
+  /* Error (line 195): 'opacity' unsupported. Keeping for highlight. */
+  opacity: 0.7;
+}
+
+/* Footer Section */
+footer {
+  /* Error (line 201): 'display:flex' unsupported. Preserving footer layout. */
+  display: flex;
+  /* Error (line 203): 'justify-content' unsupported. Keeping space-between. */
+  justify-content: space-between;
+  /* Error (line 205): 'flex-wrap' unsupported. Keeping wrap. */
+  flex-wrap: wrap;
+  /* Error (line 207): 'align-items' unsupported. Keeping center alignment. */
+  align-items: center;
+  margin-top: 20px;
+  background-color: #ede1cb;
+  padding: 20px 0;
+}
+
+footer nav {
+  /* Error (line 215): 'display:flex' unsupported. Keeping horizontal nav. */
+  display: flex;
+  /* Error (line 217): 'justify-content' unsupported. Keeping space-around. */
+  justify-content: space-around;
+  /* Error (line 219): 'flex' unsupported. Keeping proportion. */
+  flex: 2;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* Error (line 230): 'display:flex' unsupported. Keeping vertical list. */
+  display: flex;
+  /* Error (line 232): 'flex-direction' unsupported. Keeping column. */
+  flex-direction: column;
+  /* Error (line 234): 'gap' unsupported. Keeping spacing. */
+  gap: 5px;
+  text-align: center;
+}
+
+footer nav ul li a {
+  text-decoration: none;
+  color: #373684;
+  font-size: 0.95em;
+  /* Error (line 243): 'transition' unsupported. Keeping smooth color change. */
+  transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+  text-decoration: underline;
+}
+
+footer section {
+  max-width: 1024px;
+  margin: 10px auto 0;
+  text-align: center;
+  color: #373684;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+/* Map Responsive */
+.map-wrapper iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+/* Styling for Contact & Prayer Form and Prayer Bulletin Board titles */
+.contact-container h2 {
+  text-align: center;
+  color: #373684;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+```
