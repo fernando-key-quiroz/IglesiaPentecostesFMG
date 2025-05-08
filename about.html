@@ -1,7 +1,7 @@
-<!-- Iglesia Pentecostes Fe Misericordia Y Gracia:about.html -->
+<!-- Iglesia Pentecostes Fe Misericordia Y Gracia: about.html -->
 <!-- Website Author: Fernando Quiroz -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,6 @@
         <a href="index.html" class="logo__link">
           <img src="assets/media/church-logo.jpg" alt="Home - Iglesia Pentecostés FMG" class="header__logo" width="150">
         </a>
-        <!-- Navigation Menu (same as on other pages) -->
         <nav class="nav" aria-label="Main navigation">
           <ul class="nav__menu">
             <li>
@@ -34,10 +33,11 @@
               </ul>
             </li>
             <li>
-              <a href="events.html" class="nav__link">Events</a>
+              <a href="events.html" class="nav__link active">Events</a>
               <ul class="nav__submenu">
-                <li><a href="events.html#upcoming">Upcoming Events</a></li>
-                <li><a href="events.html#past">Past Events</a></li>
+                <li><a href="events.html#sunday-expanded">Sunday Mass</a></li>
+                <li><a href="events.html#midweek-expanded">Bible Study</a></li>
+                <li><a href="events.html#weekend-expanded">Preaching & Worship</a></li>
               </ul>
             </li>
             <li>
@@ -48,10 +48,11 @@
               </ul>
             </li>
             <li>
-              <a href="contact.html" class="nav__link">Contact</a>
+              <a href="contact.html" class="nav__link active">Contact</a>
               <ul class="nav__submenu">
-                <li><a href="contact.html#info">Contact Info</a></li>
-                <li><a href="contact.html#map">Location Map</a></li>
+                <li><a href="contact.html#form">Contact & Prayer Form</a></li>
+                <li><a href="contact.html#prayer">Prayer Bulletin Board</a></li>
+				<li><a href="contact.html#map">Location Map</a></li>
               </ul>
             </li>
           </ul>
@@ -59,59 +60,58 @@
       </div>
     </header>
 
-    <!-- About Grid Section (Short segments, if any) -->
-    <section class="about-grid">
-      <div class="about-section">
-        <img src="assets/media/road.jpg" alt="Road image representing our church history" class="section-img">
-        <h3>Our History & Vision</h3>
-        <p>We were founded in 1990 with a mission to serve the Chicago community spiritually and practically...</p>
-      </div>
-      <div class="about-section">
-        <img src="assets/media/mounds.jpg" alt="Symbolic image of our faith statement" class="section-img">
-        <h3>Statement of Faith</h3>
-        <p>We believe in the Trinity, the authority of the Scriptures, and the power of the Holy Spirit...</p>
-      </div>
-      <div class="about-section">
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2975.255393003136!2d-87.7055926!3d41.7797093!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e31000b6b4149%3A0x30613aeb16129cef!2sIglesia%20Pentecost%C3%A9s%20Fe%20Misericordia%20y%20Gracia!5e0!3m2!1sen!2sus!4v1744780681220!5m2!1sen!2sus"
-                  width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <h3>Location & Hours</h3>
-        <p>Visit us at our Chicago, IL location. Open Sunday through Friday, with service times listed on our Events page.</p>
-      </div>
-    </section>
-
-<!-- Expanded Content Section -->
-<section class="expanded-content" id="history">
-  <div class="about-text">
-    <h2>Iglesia Pentecostés FMG</h2>
-    <h3>Our History & Vision</h3>
-    <p>
-      Iglesia Pentecostés FMG first opened its doors in 1990 with a simple yet bold purpose: to serve Chicago’s neighborhoods both spiritually and practically. From our earliest days, we’ve aimed to be more than just another congregation—we want to be a living, breathing part of our city’s heartbeat, offering hope, healing, and hands-on help wherever it’s needed.
-    </p>
-    <p>
-      We began with a small group of dedicated believers who carried a vision of community transformation through love and faith.
-    </p>
-    <!-- Primary Image: Floated to the right after the first block of text -->
-    <div class="about-image right">
-      <img src="assets/media/gorge.jpg" alt="Our church history">
-    </div>
-    <p>
-      Over the years, our history has been marked by moments of divine intervention and community outreach. The image to the right captures one such transformative moment in our journey. We believe in the Trinity, the authority of the Scriptures, and the power of the Holy Spirit.</p>
-      <p>Our growth and commitment keep our spirit lively and purposeful in serving our neighbors. Looking ahead, our vision remains clear: a community of believers lighting up Chicago with the power of the gospel. 
-    <!-- Secondary Image: Floated to the left before the final paragraphs -->
-    <div class="about-image left">
-      <img src="assets/media/mounds.jpg" alt="Mounds">
-    </div>
-    <p>
-      Looking ahead, our vision remains clear: a community of believers lighting up Chicago with the power of the gospel. The image on the left symbolizes our heritage and the foundational impact of our faith. Join us in a story that is ever unfolding—a narrative of hope, renewal, and steadfast commitment to God's love.
-    </p>
-    <div class="clear"></div>
-  </div>
-</section>
+    <main>
+		<section id="about-studies">
+		<div class="main-heading-container">
+		<h1>About Us 🔎</h1>
+		</div>
+  <!-- Other about content -->
+		</section>
 	
-	<section class="social-links">
+        <div class="image-containers">
+          <div class="image-container" data-target="history">
+            <img src="assets/media/road.jpg" alt="Our History & Vision">
+            <h3>Our History & Vision</h3>
+            <p>We were founded in 1990 with a mission to serve the Chicago community spiritually and practically...</p>
+          </div>
+          <div class="image-container" data-target="faith">
+            <img src="assets/media/mounds.jpg" alt="Statement of Faith">
+            <h3>Statement of Faith</h3>
+            <p>We believe in the Trinity, the authority of the Scriptures, and the power of the Holy Spirit...</p>
+          </div>
+          
+<section id="history" class="commentary-section">
+  <h2>Our History & Vision</h2>
+  <p>
+    Iglesia Pentecostés FMG first opened its doors in 1990 with a simple yet bold purpose: to serve Chicago’s neighborhoods both spiritually and practically. From our earliest days, we’ve aimed to be more than just another congregation—we want to be a living, breathing part of our city’s heartbeat, offering hope, healing, and hands-on help wherever it’s needed. We began with a small group of dedicated believers who carried a vision of community transformation through love and faith.
+  </p>
+</section>
+
+<section id="faith" class="commentary-section">
+  <h2>Statement of Faith</h2>
+  <p>
+    We believe in the Trinity, the authority of the Scriptures, and the power of the Holy Spirit. Our faith is rooted in the teachings of Jesus Christ and the apostles. Inspired by Matthew 28:19, we embrace the unity of Father, Son, and Holy Spirit. The Bible (2 Tim 3:16) reveals God's truth, and Acts 1:8 empowers us to love, serve, and transform lives through divine grace. 
+  </p>
+</section>
+
+<section id="location" class="commentary-section">
+  <h2>Location & Hours</h2>
+  <p>
+    Our church is located at 3309 W 62nd Pl, Chicago, IL 60629. We are open Sunday through Friday, with various service times. Please check our Events page for the latest schedule.
+  </p>
+</section>
+<div class="image-container" data-target="location">
+            <div class="map-wrapper">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2975.255393003136!2d-87.7055926!3d41.7797093!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e31000b6b4149%3A0x30613aeb16129cef!2sIglesia%20Pentecost%C3%A9s%20Fe%20Misericordia%20y%20Gracia!5e0!3m2!1sen!2sus!4v1744780681220!5m2!1sen!2sus"
+				style="width: 100%; height: 200px; border: 0;" allowfullscreen="" loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <h3>Location & Hours</h3>
+            <p>Join us at our Chicago, IL location. Sunday services begin at 10:00 AM. See all the other services we offer and times listed on our Events page.</p>
+          </div>
+        </div>
+       
+      <section class="social-links">
         <h3>Follow Us</h3>
         <div class="social-icons">
           <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
@@ -128,9 +128,47 @@
           </a>
         </div>
       </section>
+    </main>
 
+        <!-- Footer Section Active Links Added -->
     <footer>
-      <p>&copy; 2025 Iglesia Pentecostés FMG. All rights reserved.</p>
+      <nav>
+        <ul>
+          <li><a href="about.html">Visitors</a></li>
+          <li>
+            <a href="https://www.google.com/maps?ll=41.779614,-87.705803&z=15&t=m&hl=en&gl=US&mapclient=embed&cid=3486132367923518703">
+              Location
+            </a>
+          </li>
+          <li><a href="contact.html">Parking</a></li>
+        </ul>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="resources.html">Bible Scripture</a></li>
+          <li><a href="about.html">FAQs</a></li>
+        </ul>
+      </nav>
+      <div class="footer-details">
+		<p>Iglesia Pentecostés Fe Misericordia y Gracia</p>
+		<p>3309 W 62nd Pl, Chicago, IL 60629</p>
+		<p>Office: (312) 586 - 0335 | Head Office: (312) 586 - 0335</p>
+		<p>&copy; 2025 Iglesia Pentecostés Fe Misericordia y Gracia</p>
+	  </div>
+    
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.image-container').forEach(container => {
+          container.addEventListener('click', () => {
+            const targetId = container.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
