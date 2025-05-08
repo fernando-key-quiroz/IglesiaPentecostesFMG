@@ -1,7 +1,6 @@
-/* Church Website/assets/css/STYLES.CSS */
-/*CHURCH WEBSITE AUTHOR: Fernando Quiroz */
+/* Church Website: styles.css */
+/* Author: Fernando Quiroz */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -12,74 +11,59 @@ body {
 
 .header {
   background: #ede1cb;
-  padding: 1.5rem 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
 }
 
 .header__banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2%;
+  overflow: hidden;
 }
 
-/* Navigation menu is kept separate from the logo. */
+.header__banner > *:first-child {
+  float: left;
+}
+
 .nav__menu {
   list-style: none;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  z-index: 1000; /* Ensure nav appears above other content */
+  z-index: 1000;
+  overflow: hidden;
 }
 
 .nav__menu li {
   position: relative;
+  float: left;
+  margin: 0 20px;
 }
 
-/* Navigation Link: 
-   - Updated to 75% of the original size (1.5rem instead of 2rem)
-   - "Aptos Bold Italic" (ensure it's available or imported)
-   - No underlines, and horizontal margin is now 2ch */
-.nav__link,
-.nav__link:visited,
-.nav__link:focus,
-.nav__link:active {
-  font-size: 1.5rem;
-  font-family: "Aptos Bold Italic", sans-serif;
+.nav__link, .nav__link:visited, .nav__link:focus, .nav__link:active, .nav__link.active {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
   color: #373684;
   text-decoration: none;
-  padding: 1.2rem 2rem;
-  margin: 0 2ch;
-  letter-spacing: 0.05rem;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-size: 24px;
+  padding: 19px 32px;
+  letter-spacing: 0.8px;
+  display: inline-block;
 }
 
 .nav__link:hover {
   background: #c0caf7;
   color: #1f1f70;
-  text-decoration: none;
 }
 
-.nav__link.active {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* =====================
-   SUBMENU STYLES
-========================= */
 .nav__submenu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #d4a373;
+  background-color: #ede1cb;
   padding: 10px;
   list-style: none;
   min-width: 180px;
-  z-index: 1001;  /* Ensure submenu appears on top */
+  z-index: 1001;
 }
 
 .nav__menu li:hover .nav__submenu {
@@ -88,381 +72,286 @@ body {
 
 .nav__submenu li {
   padding: 8px 12px;
+  float: none;
+  margin: 0;
 }
 
-.nav__submenu li a,
-.nav__submenu li a:visited,
-.nav__submenu li a:focus,
-.nav__submenu li a:active {
+.nav__submenu li a, .nav__submenu li a:visited, .nav__submenu li a:focus, .nav__submenu li a:active {
+  background-color: #ede1cb;
+  color: #640d14;
+  border: 2px solid #640d14;
+  padding: 10px 15px;
+  display: inline-block;
   text-decoration: none;
-  color: white;
-  display: block;
 }
 
 .nav__submenu li a:hover {
-  background-color: #e76f51;
+  background-color: #c0caf7;
+  color: #1f1f70;
 }
 
-/* =====================
-   MOBILE RESPONSIVENESS
-========================= */
-@media (max-width: 768px) {
-  .header__banner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav__menu {
-    flex-direction: column;
-  }
-
-  .nav__link {
-    font-size: 1.35rem; /* Scaled down for mobile relative to desktop size */
-    padding: 1rem 1.5rem;
-    margin: 0; /* No horizontal margin on mobile */
-  }
-}
-
-/* =====================
-   IMAGE BANNER
-========================= */
 .image-banner {
   width: 100%;
   height: 400px;
   overflow: hidden;
   margin: 0 auto;
   position: relative;
-  z-index: 0;  /* Image is behind text */
+  z-index: 0;
 }
 
 .horizontal-stretch {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
   display: block;
 }
 
-/* =====================
-   ABOUT GRID & SECTIONS
-========================= */
+/* Overlay logo should be centered above the main image */
+.image-banner img.overlay-logo {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  max-width: 40%; /* Adjusting percentage as needed to suit design */
+  height: auto;
+  z-index: 10;
+  margin-left: -20%; /* Approximates centering for max-width: 40% */
+}
+
 .about-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
   background-color: #ede2cc;
   padding: 2%;
+  overflow: hidden;
 }
 
 .about-section {
-  flex: 1 1 30%;
   background-color: #efacc1;
-  padding: 1em;
-  border-radius: 8px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  float: left;
+  width: 30%;
+  margin: 1.66%;
 }
 
 .about-section h3 {
   color: #373684;
-}
-
-@media screen and (max-width: 768px) {
-  .about-section {
-    flex: 1 1 100%;
-  }
+  margin-bottom: 10px;
 }
 
 .section-img {
   width: 100%;
   max-height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
-/* =====================
-   IGLESIA TITLE LOGO OVERLAY
-   ========================== */
-
-/* 
-   Ensures that the image banner behaves as a relative container 
-   so elements inside it can be positioned precisely.
-*/
-.image-banner {
-    position: relative; 
-    display: flex;
-    justify-content: center;  /* Centers horizontally */
-    align-items: center;  /* Centers vertically */
-}
-
-/* 
-   Overlay the Iglesia Title Logo over mound.jpg.
-   Position it absolutely within .image-banner while keeping its centered alignment.
-*/
-.image-banner img.overlay-logo {
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    max-width: 60%;  /* Adjust as needed */
-    height: auto;
-    z-index: 10;  /* Ensures that the logo appears above the background */
-}
-
-/* =====================
-   IGLESIA TITLE LOGO OVERLAY & UNDERLAY FIX
-   ========================== */
-
-/* Keep .image-banner as a relative container */
-.image-banner {
-    position: relative;
-    display: flex;
-    justify-content: center;  /* Centers all images horizontally */
-    align-items: center;  /* Ensures vertical alignment */
-}
-
-/* Ensure mound.jpg stays stretched as a background */
-.image-banner img.horizontal-stretch {
-    width: 100%;
-    height: auto;
-}
-
-/* Underlay image positioned directly beneath the overlay */
-/*.image-banner img.underlay-logo {*/
-/*    position: absolute; */
-/*    top: 50%; */
-/*    left: 50%; */
-/*    transform: translate(-50%, -50%); */
-/*    width: auto; */
-/*    max-width: 60%; */
-/*    height: auto; */
-/*    z-index: 5; */ /* Below overlay image */
-/* } */
-
-/* Overlay image positioned directly over the underlay */
-.image-banner img.overlay-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    max-width: 60%;
-    height: auto;
-    z-index: 10; /* Above the underlay image */
-}
-
-/* =====================
-   MAIN CHURCH SERVICES LAYOUT
-========================= */
-
-/* Container for the main content (left filters + right event listings) */
 #boxOfficeWrapper {
-   display: flex;
-   gap: 20px;
-   max-width: 1024px;
-   margin: 20px auto;
-   padding: 0 20px;
+  max-width: 1024px;
+  margin: 20px auto;
+  padding: 0 20px;
+  overflow: hidden;
 }
 
-/* LEFT COLUMN: Filter Options */
+.filter-container {
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  padding: 15px;
+  float: left;
+  width: 250px;
+}
+
+.events-container {
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-left: 270px;
+}
+
 #filters {
-   flex: 1;
-   background: #f9f9f9;
-   padding: 15px;
-   border: 1px solid #ddd;
+  background: none;
+  padding: 0;
+  border: none;
 }
 
-#filters h2,
-#filters h3 {
-   color: rgb(154, 64, 3);
-   margin-bottom: 10px;
+#filters h2, #filters h3 {
+  color: #373684;
+  margin-bottom: 10px;
 }
 
-/* Checkbox and form styling within filters */
 #filters form {
-   font-size: 0.95em;
-}
-#filters form label {
-   display: block;
-   margin-bottom: 5px;
+  font-size: 0.95em;
 }
 
-/* RIGHT COLUMN: Detailed Event Listings */
-#eventListings {
-   flex: 2;
+#filters form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #373684;
+}
+
+#filters form select {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #ede1cb;
+  color: #640d14;
+  border: 2px solid #640d14;
+  font-size: 1em;
+}
+
+#filters form select:hover {
+  background-color: #c0caf7;
+  color: #1f1f70;
 }
 
 #eventListings h2 {
-   color: rgb(154, 64, 3);
-   margin-bottom: 15px;
+  color: #373684;
+  margin-bottom: 15px;
 }
 
 .event-item {
-   border-bottom: 1px solid #ddd;
-   padding-bottom: 15px;
-   margin-bottom: 15px;
-   display: flex;
-   justify-content: space-between;
-   align-items: flex-start;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
 }
 
 .event-info {
-   max-width: 80%;
+  max-width: 80%;
+  float: left;
+}
+
+.event-item .rsvp {
+  float: right;
 }
 
 .event-info p {
-   margin: 5px 0;
-   font-size: 0.95em;
+  margin: 5px 0;
+  font-size: 0.95em;
 }
 
 .event-info p strong {
-   color: rgb(154, 64, 3);
+  color: #373684;
 }
 
-/* RSVP Button Styling */
 .rsvp {
-   background: rgb(178, 97, 63);
-   color: white;
-   border: none;
-   padding: 10px 15px;
-   cursor: pointer;
-   font-size: 0.9em;
-   transition: background 0.3s ease;
+  background-color: #ede1cb;
+  color: #640d14;
+  border: 2px solid #640d14;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .rsvp:hover {
-   background: rgb(154, 64, 3);
+  background-color: #c0caf7;
+  color: #1f1f70;
 }
 
-/* =====================
-   GLOBAL TEXT COLOR UPDATE TO #640D14
-========================= */
-
-#filters h2, #filters h3,
-#eventListings h2,
-.event-info p strong,
-footer section,
-footer nav ul li a {
-    color: #640D14; /* Updated dark red-brown hue */
+h1, h2, h3, h4, h5, strong, label {
+  color: #373684;
 }
 
-/* RSVP Button Color Update */
-.rsvp {
-    background: #640D14; /* Button background color */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background 0.3s ease;
-}
-
-.rsvp:hover {
-    background: #5a0f1b; /* Slightly lighter shade for hover */
-}
-
-/* Footer Background Update */
 footer {
-    background-color: #640D14; /* Matching hue for continuity */
-    border-top: 2px solid #5a0f1b; /* Slightly lighter shade */
+  display: table;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #ede1cb;
+  padding: 20px 0;
 }
 
-/* =====================
-   DROP-DOWN MENU COLOR UPDATE (#AD2831)
-========================= */
-
-/* Background color for the drop-down menu */
-.nav__submenu {
-    background-color: #AD2831;
-}
-
-/* Text color inside the drop-down menu */
-.nav__submenu li a,
-.nav__submenu li a:visited,
-.nav__submenu li a:focus,
-.nav__submenu li a:active {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 8px 12px;
-}
-
-/* Hover effect for drop-down menu links */
-.nav__submenu li a:hover {
-    background-color: #801E27; /* Slightly darker shade for hover */
-}
-
-/* =====================
-   CENTERING CHURCH.PNG IMAGE
-========================= */
-
-.picture {
-    display: flex;
-    justify-content: center; /* Centers the image horizontally */
-    align-items: center; /* Centers vertically (if needed) */
-    width: 100%;
-    margin: 20px auto;
-}
-
-.picture img.center {
-    max-width: 60%; /* Adjust as needed */
-    height: auto;
-    display: block;
-}
-
-/* =====================
-   FOOTER NAVIGATION UNIFORM LAYOUT & COLOR
-========================= */
-
-/* Footer Container: Ensure it stands out with uniform spacing and matching color scheme */
-footer {
-   clear: both;
-   display: block;
-   margin-top: 20px;
-   background-color: #ede1cb; /* Same banner background used in header */
-   padding: 20px 0;
-   border-top: 2px solid rgb(154, 64, 3); /* Use header nav color for continuity */
-}
-
-/* Footer Navigation: Arrange the three link groups evenly */
 footer nav {
-   display: flex;
-   justify-content: space-around;
-   max-width: 1024px;
-   margin: 0 auto;
-   padding: 0 20px;
+  display: table-cell;
+  width: 66.66%;
+  padding: 0 20px;
+  vertical-align: top;
 }
 
-/* Each list group in the footer nav */
 footer nav ul {
-   list-style: none;
-   padding: 0;
-   margin: 0;
-   display: flex;
-   flex-direction: column;
-   gap: 5px;
+  display: inline-block;
+  margin: 0 20px;
+  list-style: none;
+  padding: 0;
+  vertical-align: top;
 }
 
-/* Footer Links: Use the header's color for continuity */
+footer nav ul li {
+  margin-bottom: 5px;
+}
+
 footer nav ul li a {
-   color: rgb(154, 64, 3);
-   text-decoration: none;
-   font-size: 0.95em;
-   transition: color 0.3s ease;
+  text-decoration: none;
+  color: #373684;
+  font-size: 0.95em;
 }
 
 footer nav ul li a:hover {
-   text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* Footer Address Section */
-footer section {
-   max-width: 1024px;
-   margin: 10px auto 0;
-   text-align: center;
-   color: rgb(154, 64, 3);
-   font-size: 0.95em;
-   line-height: 1.4;
+.footer-details {
+  display: table-cell;
+  width: 33.33%;
+  text-align: right;
+  font-size: 0.95em;
+  color: #373684;
+  line-height: 1.2;
+  padding-right: 20px;
+  vertical-align: top;
+}
+
+.main-heading-container {
+  text-align: center;
+  margin: 20px auto;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.main-heading-container h1 {
+  margin: 0;
+  color: #373684;
+  font-size: 2em;
+}
+
+/* @media screen and (max-width: 768px) { */
+/* validation error persist even when making max-width: 480px known error according to research */
+@media screen and (max-width: 768px) {
+  .header__banner {
+    text-align: center;
+  }
+  .nav__menu {
+    text-align: center;
+  }
+  .nav__menu li {
+    float: none;
+    display: block;
+    margin: 0;
+  }
+  .nav__link, .nav__link:visited, .nav__link:focus, .nav__link:active, .nav__link.active {
+    font-size: 22px;
+    padding: 16px 24px;
+  }
+  .about-grid {
+    text-align: center;
+  }
+  .about-section {
+    float: none;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .filter-container {
+    float: none;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  .events-container {
+    margin-left: 0;
+  }
+  .event-info {
+    max-width: 100%;
+    float: none;
+    text-align: center;
+  }
+  .event-item .rsvp {
+    float: none;
+    display: block;
+    margin: 10px auto 0;
+  }
 }
